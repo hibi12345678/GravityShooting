@@ -23,10 +23,10 @@ public class GameRoomTimeDisplay : MonoBehaviour
         // ゲームの経過時間を求めて、小数第一位まで表示する
         float elapsedTime = Mathf.Max(0f, unchecked(PhotonNetwork.ServerTimestamp - timestamp) / 1000f);
         
-        if (elapsedTime > 60.0f)
+        if (elapsedTime > 30.0f)
         {
             playerCountText.text = "4/4";
-            timeLabel.text = (65.0f - elapsedTime).ToString("f1");
+            timeLabel.text = (35.0f - elapsedTime).ToString("f1");
             if (65.0f - elapsedTime < 0)
                 ChangeScene();
         }

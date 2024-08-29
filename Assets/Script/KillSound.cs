@@ -38,8 +38,8 @@ public class KillSound : MonoBehaviourPunCallbacks
                 killtextInstance.transform.localRotation = Quaternion.identity;
                 Destroy(killtextInstance, 2.0f);
                 count = 0;
-                
-               
+
+                PlaySound();
             }
 
            
@@ -51,7 +51,11 @@ public class KillSound : MonoBehaviourPunCallbacks
 
     void PlaySound()
     {
-        audioSources[3].Play();
+        if (photonView.IsMine)
+        {
+            audioSources[3].Play();
+        }
+        
     }
     
 

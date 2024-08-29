@@ -197,20 +197,13 @@ public class Health : MonoBehaviourPunCallbacks
             
             foreach (GameObject obj in allObjects)
             {
-                if (obj.layer == 8)
+                if (obj.name == "Player2(Clone)" || obj.name == "Player4(Clone)" || obj.name == "Player3-1(Clone)" || obj.name == "Player3-3(Clone)")
                 {
                     objectsWithLayer7.Add(obj);
+                    
                 }
 
-                killuiInstance = Instantiate(killuiPrefab, uiParent);
-                killuiInstance.transform.localPosition = new Vector3(0,200,0);               
-                killuiInstance.transform.localRotation = Quaternion.identity;
-                Destroy(killuiInstance, 2.0f);
-                killtextInstance = Instantiate(killtextPrefab, uiParent);
-                killtextInstance.text = "Killed by Player" + kill.ToString();
-                killtextInstance.transform.localPosition = new Vector3(0,200,0);
-                killtextInstance.transform.localRotation = Quaternion.identity;
-                Destroy(killtextInstance, 2.0f);
+                
 
             }
 
@@ -233,29 +226,21 @@ public class Health : MonoBehaviourPunCallbacks
 
             if (photonView.IsMine)
             {
-                // すべてのコリジョンを無効化
-                Collider[] colliders = GetComponents<Collider>();
-                foreach (Collider collider in colliders)
-                {
-                    collider.enabled = false;
-                }
-                // Rigidbodyの物理演算を無効化
-                Rigidbody rb = GetComponent<Rigidbody>();
-                myCamera.enabled = false;
-                rb.isKinematic = true;
-                parentObject.SetActive(false);
+                killuiInstance = Instantiate(killuiPrefab, uiParent);
+                killuiInstance.transform.localPosition = new Vector3(0, 200, 0);
+                killuiInstance.transform.localRotation = Quaternion.identity;
+                Destroy(killuiInstance, 2.0f);
+                killtextInstance = Instantiate(killtextPrefab, uiParent);
+                killtextInstance.text = "Killed by Player" + kill.ToString();
+                killtextInstance.transform.localPosition = new Vector3(0, 200, 0);
+                killtextInstance.transform.localRotation = Quaternion.identity;
+                Destroy(killtextInstance, 2.0f);
+                
+                
                 // ランダムに選ばれた位置に移動
                 int randomIndex = Random.Range(0, validPoints.Count);
                 transform.position = validPoints[randomIndex];
-                //yield return new WaitForSeconds(1f);
-                parentObject.SetActive(true);
-                myCamera.enabled = true;
-                // 再度、すべてのコリジョンを有効化
-                foreach (Collider collider in colliders)
-                {
-                    collider.enabled = true;
-                }
-                rb.isKinematic = false;
+                
             }
 
         }
@@ -266,20 +251,11 @@ public class Health : MonoBehaviourPunCallbacks
 
             foreach (GameObject obj in allObjects)
             {
-                if (obj.layer == 7)
+                if (obj.name == "Player1(Clone)" || obj.name == "Player3(Clone)" || obj.name == "Player3-2(Clone)" )
                 {
                     objectsWithLayer8.Add(obj);
                 }
-
-                killuiInstance = Instantiate(killuiPrefab, uiParent);
-                killuiInstance.transform.localPosition = new Vector3(0, 200, 0);
-                killuiInstance.transform.localRotation = Quaternion.identity;
-                Destroy(killuiInstance, 2.0f);
-                killtextInstance = Instantiate(killtextPrefab, uiParent);
-                killtextInstance.text = "Killed by Player" + kill.ToString();
-                killtextInstance.transform.localPosition = new Vector3(0, 200, 0);
-                killtextInstance.transform.localRotation = Quaternion.identity;
-                Destroy(killtextInstance, 2.0f);
+            
 
             }
             
@@ -303,29 +279,21 @@ public class Health : MonoBehaviourPunCallbacks
 
             if (photonView.IsMine)
             {
-                // すべてのコリジョンを無効化
-                Collider[] colliders = GetComponents<Collider>();
-                foreach (Collider collider in colliders)
-                {
-                    collider.enabled = false;
-                }
-                // Rigidbodyの物理演算を無効化
-                Rigidbody rb = GetComponent<Rigidbody>();
-                myCamera.enabled = false;
-                rb.isKinematic = true;
-                parentObject.SetActive(false);
+                killuiInstance = Instantiate(killuiPrefab, uiParent);
+                killuiInstance.transform.localPosition = new Vector3(0, 200, 0);
+                killuiInstance.transform.localRotation = Quaternion.identity;
+                Destroy(killuiInstance, 2.0f);
+                killtextInstance = Instantiate(killtextPrefab, uiParent);
+                killtextInstance.text = "Killed by Player" + kill.ToString();
+                killtextInstance.transform.localPosition = new Vector3(0, 200, 0);
+                killtextInstance.transform.localRotation = Quaternion.identity;
+                Destroy(killtextInstance, 2.0f);
+                
+                
                 // ランダムに選ばれた位置に移動
                 int randomIndex = Random.Range(0, validPoints.Count);
                 transform.position = validPoints[randomIndex];
-                //yield return new WaitForSeconds(1f);
-                parentObject.SetActive(true);
-                myCamera.enabled = true;
-                // 再度、すべてのコリジョンを有効化
-                foreach (Collider collider in colliders)
-                {
-                    collider.enabled = true;
-                }
-                rb.isKinematic = false;
+                
             }
                 
 
@@ -346,31 +314,6 @@ public class Health : MonoBehaviourPunCallbacks
     }
 
 
-    /*
-    IEnumerator CameraOff()
-    {
-        // すべてのコリジョンを無効化
-        Collider[] colliders = GetComponents<Collider>();
-        foreach (Collider collider in colliders)
-        {
-            collider.enabled = false;
-        }
-        // Rigidbodyの物理演算を無効化
-        Rigidbody rb = GetComponent<Rigidbody>();
-        myCamera.enabled = false;
-        rb.isKinematic = true;
-        parentObject.SetActive(false);
-        //yield return new WaitForSeconds(1f);
-        parentObject.SetActive(true);
-        myCamera.enabled = true;
-        // 再度、すべてのコリジョンを有効化
-        foreach (Collider collider in colliders)
-        {
-            collider.enabled = true;
-        }
-        rb.isKinematic = false;
-        
-    }
-    */
+   
 }
 

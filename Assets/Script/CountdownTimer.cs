@@ -4,7 +4,7 @@ using Photon.Pun;
 public class CountdownTimer : MonoBehaviourPunCallbacks
 {
 
-    public float totalTime = 180f;  // カウントダウンする時間（秒）
+    public float totalTime = 100f;  // カウントダウンする時間（秒）
 
     float timeRemaining;
 
@@ -20,7 +20,7 @@ public class CountdownTimer : MonoBehaviourPunCallbacks
     void Start()
     {
         
-        currentTime = 180f;
+        currentTime = 100f;
         timeRemaining = totalTime;
         UpdateTimerText();
         if (PhotonNetwork.IsMasterClient)

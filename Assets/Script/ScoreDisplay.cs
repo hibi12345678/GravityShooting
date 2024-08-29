@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 using Photon.Pun;
-public class ScoreDisplay : MonoBehaviour
+public class ScoreDisplay : MonoBehaviourPunCallbacks
 {
     public GameObject defeat;
     public GameObject victory;
@@ -156,7 +156,7 @@ public class ScoreDisplay : MonoBehaviour
         // ŠÔ‚ğ”¼•ª‚É’x‚­‚·‚é
         Time.timeScale = 0.5f;
 
-        // 3•bŠÔ‘Ò‚Â‚ªAÀÛ‚É‚Í6•b‚©‚©‚é
+        // 2•bŠÔ‘Ò‚Â‚ªAÀÛ‚É‚Í6•b‚©‚©‚é
         yield return new WaitForSeconds(2.0f);
 
         // ŠÔ‚ğŒ³‚É–ß‚·
