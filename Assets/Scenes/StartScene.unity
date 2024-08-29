@@ -401,7 +401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: -400}
+  m_AnchoredPosition: {x: 550, y: -350}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544890302
@@ -438,7 +438,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "WASD : \u6B69\u304F\nShift : \u8D70\u308B\nSpace : \u30B8\u30E3\u30F3\u30D7\n\u5DE6\u30AF\u30EA\u30C3\u30AF
-    : \u653B\u6483"
+    : \u653B\u6483\nTab : \u30B9\u30B3\u30A2\u8868\u793A\nESC : \u30E1\u30CB\u30E5\u30FC"
 --- !u!222 &544890303
 CanvasRenderer:
   m_ObjectHideFlags: 0

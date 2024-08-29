@@ -46,10 +46,7 @@ public class SphereCharacterController : MonoBehaviourPunCallbacks
             planet = sphere.transform;
             
             photonView.RPC(nameof(ChangeLayer), RpcTarget.All);
-           if (photonView.IsMine)
-           {
-               photonView.RPC(nameof(StartSound), RpcTarget.All);
-           }
+            StartSound();
 
     }
 
@@ -97,8 +94,7 @@ public class SphereCharacterController : MonoBehaviourPunCallbacks
             // Wキーで前進
             if (Input.GetKey(KeyCode.W))
             {
-                photonView.RPC(nameof(WalkSound), RpcTarget.All);
-                //WalkSound();
+                WalkSound();
                 moveDirection += childForward;
                 if (!animator.GetBool("Walk"))
                 {
@@ -189,8 +185,8 @@ public class SphereCharacterController : MonoBehaviourPunCallbacks
             // Aキーで左移動
             else if (Input.GetKey(KeyCode.A))
             {
-                //photonView.RPC(nameof(WalkSound), RpcTarget.All);
-                WalkSound();
+                photonView.RPC(nameof(WalkSound), RpcTarget.All);
+                //WalkSound();
                 moveDirection -= childRight;
                 if (!animator.GetBool("Walk"))
                 {
@@ -312,11 +308,10 @@ public class SphereCharacterController : MonoBehaviourPunCallbacks
     [PunRPC]
     void WalkSound()
     {
-        if (photonView.IsMine)
-        {
+        
             audioSources[0].UnPause();
             audioSources[1].Pause();
-        }
+        
             
         
     }
@@ -324,22 +319,20 @@ public class SphereCharacterController : MonoBehaviourPunCallbacks
     [PunRPC]
     void RunSound()
     {
-        if (photonView.IsMine)
-        {
+        
             audioSources[1].UnPause();
             audioSources[0].Pause();
-        }
+        
            
         
     }
     [PunRPC]
     void StartSound()
     {
-        if (photonView.IsMine)
-        {
+        
             audioSources[0].Play();
             audioSources[1].Play();
-        }
+        
             
         
     }
@@ -348,11 +341,10 @@ public class SphereCharacterController : MonoBehaviourPunCallbacks
     void StopSound()
     {
 
-        if (photonView.IsMine)
-        {
+        
             audioSources[0].Pause();
             audioSources[1].Pause();
-        }
+        
             
 
         

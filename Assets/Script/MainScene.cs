@@ -27,7 +27,7 @@ public class MainScene : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.LocalPlayer.ActorNumber == 1)
         {
-            var position = new Vector3(-2f, 15.0f, -2f);
+            var position = new Vector3(-0.5f, 14.5f, -0.5f);
             GameObject obj = PhotonNetwork.Instantiate("Player1", position, Quaternion.identity);
             
 
@@ -35,7 +35,7 @@ public class MainScene : MonoBehaviourPunCallbacks
         }
         else if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
         {      
-            var position = new Vector3(-2f, -15.0f, 2f);
+            var position = new Vector3(-0.5f, -14.5f, 0.5f);
             GameObject obj = PhotonNetwork.Instantiate("Player2", position, Quaternion.identity);
             
             
@@ -44,7 +44,7 @@ public class MainScene : MonoBehaviourPunCallbacks
         else if (PhotonNetwork.LocalPlayer.ActorNumber == 3)
         {
 
-            var position = new Vector3(2f, 15.0f, 2f);
+            var position = new Vector3(0.5f, 14.5f, 0.5f);
             GameObject obj = PhotonNetwork.Instantiate("Player3", position, Quaternion.identity);
             
             
@@ -55,7 +55,7 @@ public class MainScene : MonoBehaviourPunCallbacks
         else if (PhotonNetwork.LocalPlayer.ActorNumber == 4)
         {
        
-            var position = new Vector3(2f, -15.0f, 2f);
+            var position = new Vector3(0.5f, -14.5f, 0.5f);
             GameObject obj = PhotonNetwork.Instantiate("Player4", position, Quaternion.identity);
             
             
@@ -65,23 +65,23 @@ public class MainScene : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
-                var position = new Vector3(-2f, -15.0f, -2f);
+                var position = new Vector3(-0.5f, -14.5f, -0.5f);
                 GameObject obj = PhotonNetwork.Instantiate("Player3-1", position, Quaternion.identity);
-                position = new Vector3(2f, 15.0f, 2f);
+                position = new Vector3(0.5f, 14.5f, 0.5f);
                 obj = PhotonNetwork.Instantiate("Player3-2", position, Quaternion.identity);
-                position = new Vector3(2f, -15.0f,2f);
+                position = new Vector3(0.5f, -14.5f,0.5f);
                 obj = PhotonNetwork.Instantiate("Player3-3", position, Quaternion.identity);
             }
             else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                var position = new Vector3(2f, 15.0f,2f);
+                var position = new Vector3(0.5f, 14.5f,0.5f);
                 GameObject obj = PhotonNetwork.Instantiate("Player3-2", position, Quaternion.identity);
-                position = new Vector3(2f, -15.0f, Random.Range(-2f, 2f));
+                position = new Vector3(0.5f, -14.5f,  0.5f);
                 obj = PhotonNetwork.Instantiate("Player3-3", position, Quaternion.identity);
             }
             else if (PhotonNetwork.CurrentRoom.PlayerCount == 3)
             {
-                var position = new Vector3(2f, -15.0f, 2f);
+                var position = new Vector3(0.5f, -14.5f, 0.5f);
                 GameObject obj = PhotonNetwork.Instantiate("Player3-3", position, Quaternion.identity);
             }
         }

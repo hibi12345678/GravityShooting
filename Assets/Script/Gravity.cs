@@ -42,7 +42,7 @@ public class Gravity : MonoBehaviourPunCallbacks
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
 
-                 rb.AddForce(direction * 250 * 1.0f, ForceMode.Acceleration);
+                 rb.AddForce(direction * 150, ForceMode.Acceleration);
 
                  
 

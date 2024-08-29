@@ -56,7 +56,7 @@ public class RoomPlayerCount : MonoBehaviourPunCallbacks
         
         
 
-        if (playerCount == 2)
+        if (playerCount == 4)
         { 
             
             if(flag == false)

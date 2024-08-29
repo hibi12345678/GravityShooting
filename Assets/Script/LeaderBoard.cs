@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Leaderboard : MonoBehaviour
+public class Leaderboard : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     public TextMeshProUGUI kill1 = default;

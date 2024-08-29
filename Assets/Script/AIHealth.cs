@@ -128,9 +128,10 @@ public class AIHealth : MonoBehaviourPunCallbacks
 
             foreach (GameObject obj in allObjects)
             {
-                if (obj.layer == 8)
+                if (obj.name == "Player2(Clone)" || obj.name == "Player4(Clone)" || obj.name == "Player3-1(Clone)" || obj.name == "Player3-3(Clone)")
                 {
                     objectsWithLayer7.Add(obj);
+
                 }
 
 
@@ -152,29 +153,13 @@ public class AIHealth : MonoBehaviourPunCallbacks
                 return;
             }
 
-            // すべてのコリジョンを無効化
-            Collider[] colliders = GetComponents<Collider>();
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = false;
-            }
-            // Rigidbodyの物理演算を無効化
-            Rigidbody rb = GetComponent<Rigidbody>();
             
-            rb.isKinematic = true;
-            parentObject.SetActive(false);
+            
             // ランダムに選ばれた位置に移動
             int randomIndex = Random.Range(0, validPoints.Count);
             transform.position = validPoints[randomIndex];
-            //yield return new WaitForSeconds(1f);
-            parentObject.SetActive(true);
             
-            // 再度、すべてのコリジョンを有効化
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = true;
-            }
-            rb.isKinematic = false;
+            
         }
         else if (gameObject.layer == 8)
         {
@@ -183,7 +168,7 @@ public class AIHealth : MonoBehaviourPunCallbacks
 
             foreach (GameObject obj in allObjects)
             {
-                if (obj.layer == 7)
+                if (obj.name == "Player1(Clone)" || obj.name == "Player3(Clone)" || obj.name == "Player3-2(Clone)")
                 {
                     objectsWithLayer8.Add(obj);
                 }
@@ -207,29 +192,13 @@ public class AIHealth : MonoBehaviourPunCallbacks
                 return;
             }
 
-            // すべてのコリジョンを無効化
-            Collider[] colliders = GetComponents<Collider>();
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = false;
-            }
-            // Rigidbodyの物理演算を無効化
-            Rigidbody rb = GetComponent<Rigidbody>();
             
-            rb.isKinematic = true;
-            parentObject.SetActive(false);
             // ランダムに選ばれた位置に移動
             int randomIndex = Random.Range(0, validPoints.Count);
             transform.position = validPoints[randomIndex];
-            //yield return new WaitForSeconds(1f);
-            parentObject.SetActive(true);
             
-            // 再度、すべてのコリジョンを有効化
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = true;
-            }
-            rb.isKinematic = false;
+            
+           
 
         }
 
@@ -237,30 +206,7 @@ public class AIHealth : MonoBehaviourPunCallbacks
 
     }
 
-    IEnumerator CameraOff()
-    {
-        // すべてのコリジョンを無効化
-        Collider[] colliders = GetComponents<Collider>();
-        foreach (Collider collider in colliders)
-        {
-            collider.enabled = false;
-        }
-        // Rigidbodyの物理演算を無効化
-        Rigidbody rb = GetComponent<Rigidbody>();
-        
-        rb.isKinematic = true;
-        parentObject.SetActive(false);
-        yield return new WaitForSeconds(1f);
-        parentObject.SetActive(true);
-        
-        // 再度、すべてのコリジョンを有効化
-        foreach (Collider collider in colliders)
-        {
-            collider.enabled = true;
-        }
-        rb.isKinematic = false;
-
-    }
+   
 }
 
 
