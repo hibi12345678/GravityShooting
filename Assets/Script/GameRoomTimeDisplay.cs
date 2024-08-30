@@ -27,7 +27,7 @@ public class GameRoomTimeDisplay : MonoBehaviour
         {
             playerCountText.text = "4/4";
             timeLabel.text = (35.0f - elapsedTime).ToString("f1");
-            if (65.0f - elapsedTime < 0)
+            if (35.0f - elapsedTime < 0)
                 ChangeScene();
         }
     }
