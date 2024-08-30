@@ -29,9 +29,7 @@ public class LeftRoom : MonoBehaviourPunCallbacks
     public void UIClose()
     {
 
-        // UIにフォーカスを移す（例えば、ボタンや入力フィールド）
-        Cursor.lockState = CursorLockMode.Locked; // カーソルをロック            
-        Cursor.visible = false;
+        
         EventSystem.current.SetSelectedGameObject(null);  // フォーカスを一度解除
         escapeUI.SetActive(false);
     }

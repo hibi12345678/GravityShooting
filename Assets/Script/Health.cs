@@ -120,7 +120,7 @@ public class Health : MonoBehaviourPunCallbacks
                         // 方位角をラジアンで計算し、度に変換
                         azimuthAngle = Mathf.Atan2(flattenedDirection.z, flattenedDirection.x) * Mathf.Rad2Deg;
 
-                        uiInstance.transform.localRotation = Quaternion.Euler(0, 0, azimuthAngle - 90f);
+                        uiInstance.transform.localRotation = Quaternion.Euler(0, 0, azimuthAngle - 90f + parentObject.transform.localEulerAngles.y);
                     }
                     Destroy(uiInstance, 0.7f);
                     
@@ -150,7 +150,7 @@ public class Health : MonoBehaviourPunCallbacks
                         // 方位角をラジアンで計算し、度に変換
                         azimuthAngle = Mathf.Atan2(flattenedDirection.z, flattenedDirection.x) * Mathf.Rad2Deg;
 
-                        uiInstance.transform.localRotation = Quaternion.Euler(0, 0, azimuthAngle - 90f);
+                        uiInstance.transform.localRotation = Quaternion.Euler(0, 0, azimuthAngle - 90f-parentObject.transform.localEulerAngles.y);
                     }
                     Destroy(uiInstance, 0.7f);
 
