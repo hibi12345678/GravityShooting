@@ -72,8 +72,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 #不要ファイル
-Docs/
 .git/
 Library/
 Logs/
 UserSettings/
+Docs/
+TPSGame_Data/
