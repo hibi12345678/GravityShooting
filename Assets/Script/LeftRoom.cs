@@ -25,7 +25,17 @@ public class LeftRoom : MonoBehaviourPunCallbacks
         SceneManager.LoadScene("StartScene");
     }
 
+    public void Quit()
+    {   // ルームから退出する
+        PhotonNetwork.LeaveRoom();
+        // アプリケーションを終了する
+        Application.Quit();
 
+        // Unityエディタ内での動作確認用（ビルド後は不要）
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
     public void UIClose()
     {
 
@@ -33,6 +43,6 @@ public class LeftRoom : MonoBehaviourPunCallbacks
         EventSystem.current.SetSelectedGameObject(null);  // フォーカスを一度解除
         escapeUI.SetActive(false);
     }
- 
+
 
 }
