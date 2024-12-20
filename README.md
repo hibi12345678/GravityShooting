@@ -20,4 +20,4 @@
  - Visual Studio 2019
 
 ## 実行方法
-[Tank](Tank/)フォルダ内にある、Tank!.exeを実行することでプレイできます。
+[GravityShooting](GravityShooting/)フォルダ内にある、Tank!.exeを実行することでプレイできます。
